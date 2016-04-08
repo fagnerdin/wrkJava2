@@ -1,5 +1,6 @@
 package br.com.rcalves.controller;
 
+import br.com.rcalves.model.Calculo;
 import br.com.rcalves.model.Carros;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,18 +34,32 @@ public class servletControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        // instancia carro tipo Carros (metodos dentro de Carros)
-        Carros carro = new Carros();
+        Calculo calc = new Calculo();
         
-        //Cria lista 'sugestao' pegando carro.getCarros baseado na preferencia getParameter selecionada 
-        List<String> sugestao = carro.getCarros((String)request.getParameter("preferencia"));
+//        calc.setNum(2);
+//        calc.setDen(1);
+
+        double num = calc.soma(1, 3);
+
+        request.setAttribute("sugestao",  String.valueOf(num));
+
         
-        // busca sugestao
-        request.setAttribute("sugestao", sugestao);
-        
-        // envia resposta para result.jsp
         request.getRequestDispatcher("result.jsp").forward(request, response);
+
         
+//        //-------------------------
+//        // instancia carro tipo Carros (metodos dentro de Carros)
+//        Carros carro = new Carros();
+//        
+//        //Cria lista 'sugestao' pegando carro.getCarros baseado na preferencia getParameter selecionada 
+//        List<String> sugestao = carro.getCarros((String)request.getParameter("preferencia"));
+//        
+//        // busca sugestao
+//        request.setAttribute("sugestao", sugestao);
+//        
+//        // envia resposta para result.jsp
+//        request.getRequestDispatcher("result.jsp").forward(request, response);
+//        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

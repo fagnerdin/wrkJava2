@@ -16,12 +16,14 @@
         
         <%
             
-            List<String> result = (List<String>)request.getAttribute("sugestao");
+            String result = (String) request.getAttribute("sugestao");
 
-            for(String temp : result){
-                out.print("<br />" + temp);
-                
-            }
+            out.print(result);
+            
+//            for(String temp : result){
+//                out.print("<br />" + temp);
+//                
+//            }
 
         %>
         
