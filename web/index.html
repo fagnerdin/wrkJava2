@@ -6,17 +6,25 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Escolha o tipo de carro</title>
+        <title>Divisao</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Preferencia de carro</h1>
+        <h1>Digite os numero para ver visualizar a divisao!</h1>
         <form action="servletControl.do" method="post">
-            <select name="preferencia">
+            
+            <label>Numero</label>
+            <input name="numerador" style="max-width: 60px" type="text"/><br/>
+            <br />
+            <label>Dividendo</label>
+            <input name="denominador" style="max-width: 60px" type="text"/><br />
+            <br />
+            
+<!--            <select name="preferencia">
                 <option value="nacional">Nacional</option>
                 <option value="importado" selected="selected">Importado</option>
-            </select>
+            </select>-->
             <input type="submit" />
         </form>
         

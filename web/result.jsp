@@ -4,26 +4,48 @@
     Author     : fagnerdin
 --%>
 
+<%@page import="java.lang.String"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Resultado da sua preferencia</title>
+        <title>Divisao</title>
+        <style>
+            b{
+                background-color: #dbdbdb;
+                color: darkblue;
+            }
+        </style>
     </head>
     <body>
-        
+        <h1>Digite os numero para ver visualizar a divisao!</h1>
+        <form action="servletControl.do" method="post">
+            
+            <label>Numero</label>
+            <input name="numerador" style="max-width: 60px" type="text"/><br/>
+                <br />
+            <label>Dividendo</label>
+            <input name="denominador" style="max-width: 60px" type="text"/><br />
+            
+<!--            <select name="preferencia">
+                <option value="nacional">Nacional</option>
+                <option value="importado" selected="selected">Importado</option>
+            </select>-->
+                <br />
+                    <input type="submit" />
+                <br />
+                <br />
+        <hr />        
+                <br />
         <%
             
-            List<String> result = (List<String>)request.getAttribute("sugestao");
-
-            for(String temp : result){
-                out.print("<br />" + temp);
-                
-            }
+            String result = (String)request.getAttribute("sugestao");
+            out.print(result);
 
         %>
-        
+
+  
     </body>
 </html>
