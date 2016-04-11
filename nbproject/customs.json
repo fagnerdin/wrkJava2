@@ -1,0 +1,11 @@
+{
+    "elements": {
+        "input:remoteCommand": {},
+        "p:remoteCommand": {
+            "attributes": {
+                "name": {}
+            }
+        }
+    },
+    "attributes": {}
+}

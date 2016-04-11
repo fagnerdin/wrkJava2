@@ -1,12 +1,7 @@
-package br.com.rcalves.controller;
+package br.com.tads5pg4.controller;
 
-import br.com.rcalves.model.Calculo;
-import br.com.rcalves.model.Carros;
+import br.com.tads5pg4.model.Calculo;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,35 +29,21 @@ public class servletControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        // instancia
         Calculo calc = new Calculo();
         
-//        calc.setNum(2);
-//        calc.setDen(1);
-
+        // busca resultado da função
         String num = calc.divisao(
                 request.getParameter("numerador"),
                 request.getParameter("denominador")
                 );
 
-        request.setAttribute("sugestao",  num);
+        // seta resultado em num
+        request.setAttribute("valor",  num);
 
-        
+        // manda resposta para o jsp
         request.getRequestDispatcher("result.jsp").forward(request, response);
 
-        
-//        //-------------------------
-//        // instancia carro tipo Carros (metodos dentro de Carros)
-//        Carros carro = new Carros();
-//        
-//        //Cria lista 'sugestao' pegando carro.getCarros baseado na preferencia getParameter selecionada 
-//        List<String> sugestao = carro.getCarros((String)request.getParameter("preferencia"));
-//        
-//        // busca sugestao
-//        request.setAttribute("sugestao", sugestao);
-//        
-//        // envia resposta para result.jsp
-//        request.getRequestDispatcher("result.jsp").forward(request, response);
-//        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

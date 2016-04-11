@@ -7,17 +7,20 @@
 <%@page import="java.lang.String"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% String result = (String)request.getAttribute("valor"); %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Divisao</title>
+        <script src="./lib"></script>
         <style>
             b{
                 background-color: #dbdbdb;
                 color: darkblue;
             }
         </style>
+        
     </head>
     <body>
         <h1>Digite os numero para ver visualizar a divisao!</h1>
@@ -28,24 +31,14 @@
                 <br />
             <label>Dividendo</label>
             <input name="denominador" style="max-width: 60px" type="text"/><br />
-            
-<!--            <select name="preferencia">
-                <option value="nacional">Nacional</option>
-                <option value="importado" selected="selected">Importado</option>
-            </select>-->
                 <br />
-                    <input type="submit" />
+                <input type="submit" value="Enviar" />
                 <br />
                 <br />
         <hr />        
                 <br />
-        <%
-            
-            String result = (String)request.getAttribute("sugestao");
-            out.print(result);
 
-        %>
-
-  
+                        <% out.print(result); %>  
+                
     </body>
 </html>
