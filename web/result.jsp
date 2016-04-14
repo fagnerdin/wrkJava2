@@ -26,7 +26,6 @@
         <h1>Digite os numero para ver visualizar a divisao!</h1>
         <form action="servletControl.do" method="post">
             
-<<<<<<< HEAD
             <label>Numero</label>
             <input name="numerador" style="max-width: 60px" type="text"/><br/>
                 <br />
@@ -38,23 +37,7 @@
                 <br />
         <hr />        
                 <br />
-=======
-            String result = (String) request.getAttribute("sugestao");
->>>>>>> origin/master
-
-<<<<<<< HEAD
                         <% out.print(result); %>  
                 
-=======
-            out.print(result);
-            
-//            for(String temp : result){
-//                out.print("<br />" + temp);
-//                
-//            }
-
-        %>
-        
->>>>>>> origin/master
     </body>
 </html>
